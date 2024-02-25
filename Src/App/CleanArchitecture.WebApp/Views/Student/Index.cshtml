@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CleanArchitecture.Application.ViewModel.StudentVm>
+@{
+	long idNo = 1;
+}
+
+<div class="container">
+	<a class="btn btn-info mb-3" asp-action="Create">Create New</a>
+	<table class="table table-responsive table-bordered">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var item in Model)
+			{
+				<tr>
+					<td>@idNo</td>
+					<td>@item.Name</td>
+					<td>@item.Address</td>
+					<td>
+						<a asp-action="Create" asp-route-id="@item.Id" class="btn btn-success">Edit</a>
+						<a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('ARe You Sure To Delete THis??')" class="btn btn-danger">Delete</a>
+						<a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+					</td>
+				</tr>
+				idNo++;
+			}
+		</tbody>
+	</table>
+</div>

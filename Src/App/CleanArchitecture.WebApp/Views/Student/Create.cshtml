@@ -1,0 +1,16 @@
+﻿@model CleanArchitecture.Application.ViewModel.StudentVm
+@{
+
+}
+
+<div class="container">
+	<form asp-action="Create" method="post">
+		<div class="col-md-4">
+			<input type="text" class="form-control" asp-for="Name" placeholder="Enter Your Name"/>
+		</div>
+		<div class="col-md-4 mt-3">
+			<input type="text" class="form-control" asp-for="Address" placeholder="Enter Your Address" />
+		</div>
+		<input class="btn btn-success mt-2" type="submit" value="Submit"/>
+	</form>
+</div>
